@@ -1,7 +1,16 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'leaf.css' %}">
+
 <h3>Employees</h3>
+<title>Companies employees</title>
 <ul>
     {% for employee in employees %}
-    <li>{{ employee.name }} - {{ employee.position }}</li>
+    <li>
+        <div class='leaf'>
+            <{{ employee.pk }}> {{ employee.name }} - {{ employee.position }}
+        </div>
+
+    </li>
     {% empty %}
     <li>No employees yet.</li>
     {% endfor %}
